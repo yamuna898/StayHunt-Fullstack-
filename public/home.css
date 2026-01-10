@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 10;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #dcd7d7;
+}
+
+.navleft,
+.navright {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #333;
+}
+
+.navbar a:hover {
+    color: #ff002f;
+}
+
+/* Cards layout */
+.card-container {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    row-gap: 15px;
+}
+
+/* Card */
+.card {
+    width: 220px;
+    padding: 0 0 10px 0;
+    border-radius: 12px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+/* Image */
+.card-image {
+    height: 160px;
+    width: 100%;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+/* Text */
+.card-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.card-price {
+    font-size: 13px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
