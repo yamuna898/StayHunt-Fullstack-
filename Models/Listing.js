@@ -4,21 +4,12 @@
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 const listSchema = new schema({
-    place: { type: String, required: true },
-    image: {
-        filename: { type: String },
-        url: {
-            type: String,
-            default: "./img.jpg",
-            set: (v) => (v === "" ? "./img.jpg" : v),
-        },
-    },
     title: String,
     description: String,
     price: Number,
     location: String,
     country: String,
-    Query: Number,
+    url: String,
     email: String,
     dateadded: { type: Date, default: Date.now },
 });
