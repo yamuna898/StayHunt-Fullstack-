@@ -4,6 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>StayHunt</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+            integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <style>
             * {
                 margin: 0;
@@ -14,6 +21,10 @@
 
             /* Navbar */
             .navbar {
+                background-color: #fff;
+                position: fixed;
+                top: 0;
+                margin-bottom: 100px;
                 height: 45px;
                 width: 100%;
                 display: flex;
@@ -38,13 +49,16 @@
             .navbar a:hover {
                 color: #ff002f;
             }
+            h1 {
+                margin: 80px 0 0 35px;
+            }
 
             /* Cards layout */
             .card-container {
                 padding: 35px;
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 24px;
+                gap: 40px;
             }
 
             .card {
@@ -56,6 +70,7 @@
             }
 
             .card:hover {
+                opacity: 0.86;
                 transform: translateY(-6px);
                 box-shadow: -20px -20px 28px #ffffff,
                     20px 20px 28px rgba(175, 177, 179, 0.18);
@@ -90,42 +105,99 @@
                 font-weight: 600;
                 color: #111;
             }
+            /* Footer */
+            .footer {
+                width: 100%;
+                background-color: #f1f0f0;
+                padding: 50px;
+                margin-top: 150px;
+                position: relative;
+                bottom: 0px;
+            }
+            .links {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-bottom: 25px;
+            }
+            .contact,
+            .limited,
+            .policy {
+                display: flex;
+                justify-content: center;
+            }
+            .contact p,
+            .limited p,
+            .policy p {
+                margin: 5px;
+            }
         </style>
     </head>
     <body>
         <!-- Navbar -->
         <nav class="navbar">
             <div class="navleft">
-                <a href="#">Home</a>
-                <a href="#">Experiences</a>
-                <a href="#">Services</a>
+                <i
+                    class="fa-regular fa-compass"
+                    style="color: #ff002f; font-size: 15px"
+                ></i>
+                <a href="/listings">Home</a>
+                <a href="/experiences">Experiences</a>
+                <a href="/services">Services</a>
             </div>
             <div class="navright">
-                <a href="#">Become a host</a>
-                <a href="#">EN</a>
-                <a href="#">Help</a>
+                <a href="/listings/new">Add New listing</a>
+                <a href="/lang">EN</a>
+                <a href="/help">Help</a>
             </div>
         </nav>
 
         <!-- Main content -->
+        <h1>All Listings</h1>
         <main class="card-container">
             <% for(let list of alllistings){ %>
 
             <div class="card">
                 <a href="/listings/<%= list._id %>">
-                    <div class="card-image"></div>
+                    <img
+                        src="<%= list.url %>"
+                        alt="Listing image"
+                        class="card-image"
+                    />
                 </a>
                 <div>
                     <a class="card-title" href="/listings/<%= list._id %>"
                         ><%= list.title %></a
                     >
                     <h6 class="card-price">
-                        <%= list.price %> / night <span>★</span>
+                        &#8377; 
+                        <%= typeof list.price === "number"? list.price.toLocaleString("en-IN"): "N/A" %>
+                        /night<span>★</span>
                     </h6>
                 </div>
             </div>
 
             <% } %>
         </main>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="links">
+                <a class="fa-brands fa-instagram"></a>
+                <a class="fa-brands fa-linkedin"></a>
+                <a class="fa-brands fa-github"></a>
+                <a class="fa-brands fa-square-x-twitter"></a>
+                <a class="fa-brands fa-discord"></a>
+                <a class="fa-solid fa-link"></a>
+            </div>
+            <div class="contact">
+                <p>stayhunt@gmail.com &nbsp; yamuna845@gmail.com</p>
+            </div>
+            <div class="limited"><p>&copy;StayHunt Inc</p></div>
+
+            <div class="policy">
+                <p>·Privacy · TermsCompany · Details</p>
+            </div>
+        </div>
     </body>
 </html>
