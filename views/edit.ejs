@@ -92,14 +92,14 @@
             <form
                 class="edit-form"
                 method="post"
-                action="/listings/<%= specificlist[0]._id %>/edit?_method=PATCH"
+                action="/listings/<%= specificlist._id %>/edit?_method=PATCH"
             >
                 <div class="field">
                     <label>Title</label>
                     <input
                         type="text"
                         name="title"
-                        value="<%= specificlist[0].title %>"
+                        value="<%= specificlist.title %>"
                     />
                 </div>
 
@@ -108,7 +108,7 @@
                     <input
                         type="text"
                         name="description"
-                        value="<%= specificlist[0].description %>"
+                        value="<%= specificlist.description %>"
                     />
                 </div>
 
@@ -117,7 +117,7 @@
                     <input
                         type="text"
                         name="url"
-                        value="<%= specificlist[0].image.url %>"
+                        value="<%= specificlist.image.url %>"
                     />
                 </div>
 
@@ -129,7 +129,7 @@
                             <input
                                 type="text"
                                 name="price"
-                                value="<%= specificlist[0].price %>"
+                                value="<%= specificlist.price %>"
                             />
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                         <input
                             type="text"
                             name="country"
-                            value="<%= specificlist[0].country %>"
+                            value="<%= specificlist.country %>"
                         />
                     </div>
                 </div>
@@ -149,12 +149,12 @@
                     <input
                         type="text"
                         name="location"
-                        value="<%= specificlist[0].location %>"
+                        value="<%= specificlist.location %>"
                     />
                 </div>
                 <button class="btn" type="submit">Make changes</button>
 
-                <a href="/listings/<%= specificlist[0]._id %>" class="back"
+                <a href="/listings/<%= specificlist._id %>" class="back"
                     >← Back to Listing</a
                 >
             </form>
