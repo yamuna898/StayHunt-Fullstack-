@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reservation</title>
+        <link rel="stylesheet" href="/reservation.css" />
+    </head>
+    <body>
+        <div class="booking-box">
+            <div class="fees"><b>🏷</b> Prices include all fees</div>
+
+            <div class="total">
+                ₹<%= specificlist[0].price %>
+                <span style="font-size: 14px; font-weight: normal"
+                    >for 1 nights</span
+                >
+            </div>
+
+            <div class="dates">
+                <div class="date-row">
+                    <div class="date">
+                        <div class="label">CHECK-IN</div>
+                        <input type="datetime-local" style="border: none" />
+                    </div>
+                    <div class="date">
+                        <div class="label">CHECKOUT</div>
+                        <input type="datetime-local" style="border: none" />
+                    </div>
+                </div>
+
+                <div class="guests">
+                    <span>GUESTS</span>
+                    <select name="Guests" id="guestnumber" style="border: none">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 Person</option>
+                        <option value="3">3 Person</option>
+                        <option value="4">4 Person</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="reserve-btn">Reserve</button>
+
+            <div class="note">You won't be charged yet</div>
+
+            <div class="report">🚩 Report this listing</div>
+        </div>
+    </body>
+</html>

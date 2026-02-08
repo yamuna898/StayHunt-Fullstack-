@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+}
+
+body {
+    background: #f7f7f7;
+    color: #222;
+}
+
+/* PAGE */
+.help-page {
+    padding: 80px 60px;
+}
+
+/* INTRO */
+.help-intro {
+    max-width: 640px;
+    margin-bottom: 72px;
+}
+
+.help-intro h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.help-intro p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* SECTION */
+.help-section {
+    margin-bottom: 80px;
+}
+
+.help-section h2 {
+    font-size: 22px;
+    margin-bottom: 32px;
+}
+
+.help-section.muted {
+    background: #ffffff;
+    padding: 48px;
+    border-radius: 20px;
+}
+
+/* GRID */
+.help-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+}
+
+/* ITEMS */
+.help-item,
+.contact-item {
+    display: grid;
+    gap: 12px;
+}
+
+.help-icon {
+    font-size: 28px;
+}
+
+.help-item h4,
+.contact-item h4 {
+    font-size: 16px;
+}
+
+.help-item p,
+.contact-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* FAQ */
+.faq-list {
+    display: grid;
+    gap: 28px;
+}
+
+.faq-item h4 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .help-page {
+        padding: 64px 40px;
+    }
+
+    .help-intro h1 {
+        font-size: 28px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .help-page {
+        padding: 48px 20px;
+    }
+
+    .help-intro {
+        margin-bottom: 48px;
+    }
+
+    .help-intro h1 {
+        font-size: 24px;
+    }
+
+    .help-section h2 {
+        font-size: 20px;
+    }
+
+    .help-section.muted {
+        padding: 28px;
+        border-radius: 16px;
+    }
+}

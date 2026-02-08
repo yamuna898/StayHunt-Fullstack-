@@ -1,0 +1,31 @@
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #f1f0f0;
+    padding: 50px;
+    margin-top: 150px;
+    position: relative;
+    bottom: 0px;
+}
+.links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.contact,
+.limited,
+.policy {
+    display: flex;
+    justify-content: center;
+}
+.contact p,
+.limited p,
+.policy p {
+    margin: 5px;
+}
+a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}

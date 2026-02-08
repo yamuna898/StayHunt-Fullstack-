@@ -10,6 +10,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 
 const path = require("path");
+app.use(express.static("public/css"));
+app.use(express.static("public/js"));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -44,6 +46,34 @@ async function main() {
 app.get("/listings", async (req, res) => {
     const alllistings = await Listing.find();
     res.render("alllistings.ejs", { alllistings }); //list of objects
+});
+
+//Experiences
+app.get("/listings/experiences", (req, res) => {
+    res.render("Experiences.ejs");
+});
+
+//Services
+app.get("/listings/services", (req, res) => {
+    res.render("services.ejs");
+});
+
+//Help
+app.get("/listings/help", (req, res) => {
+    res.render("help.ejs");
+});
+
+//Create new listing
+app.get("/listings/new", (req, res) => {
+    res.render("addnew.ejs");
+});
+
+app.patch("/listings/new", async (req, res) => {
+    const price = parseInt(req.body.price);
+    req.body.price = price;
+    const newlisting = new Listing(req.body);
+    await newlisting.save();
+    res.redirect("/listings");
 });
 
 //specific listing
