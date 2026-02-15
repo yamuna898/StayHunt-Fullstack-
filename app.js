@@ -42,6 +42,13 @@ async function main() {
 }
 
 //Routes-------------------------------------------------------
+app.get("/", (req, res) => {
+    res.render("register.ejs");
+});
+//login
+app.get("/login", (req, res) => {
+    res.render("login.ejs");
+});
 //show all listings
 app.get("/listings", async (req, res) => {
     const alllistings = await Listing.find();
@@ -114,7 +121,11 @@ app.get("/listings/:id/delete", async (req, res) => {
 //     res.send("Successfully Saved.In database");
 // });
 
+//Error handling
+app.use((err, req, res, next) => {
+    res.send("something went wrong!");
+});
 //Boop
 app.listen(8080, () => {
-    console.log(`Server is listening`);
+    console.log(`Server is listening on port 8080`);
 });
