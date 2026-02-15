@@ -77,3 +77,10 @@ input {
     text-decoration: none;
     color: black;
 }
+
+#imgPreview {
+    border: solid 1px #b7b6db;
+    height: 200px;
+    width: 500px;
+    object-fit: cover;
+}

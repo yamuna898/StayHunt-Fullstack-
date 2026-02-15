@@ -66,7 +66,7 @@ body {
     color: white;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .primary-btn:hover {
@@ -80,7 +80,7 @@ body {
 }
 
 .auth-footer a {
-    color: #ff385c;
+    color: #e31c5f;
     text-decoration: none;
     font-weight: 500;
 }

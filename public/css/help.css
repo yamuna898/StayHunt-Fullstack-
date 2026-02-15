@@ -82,7 +82,7 @@ body {
     line-height: 1.5;
 }
 
-/* FAQ */
+/* FAQ-sec */
 .faq-list {
     display: grid;
     gap: 28px;
@@ -101,7 +101,6 @@ body {
 
 /* MEDIA QUERIES */
 
-/* Tablet */
 @media (max-width: 1024px) {
     .help-page {
         padding: 64px 40px;
@@ -112,7 +111,6 @@ body {
     }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
     .help-page {
         padding: 48px 20px;
