@@ -57,7 +57,7 @@ app.get("/listings", async (req, res) => {
 
 //Experiences
 app.get("/listings/experiences", (req, res) => {
-    res.render("Experiences.ejs");
+    res.render("experiences.ejs");
 });
 
 //Services
@@ -108,7 +108,7 @@ app.patch("/listings/:id/edit", async (req, res) => {
 app.get("/listings/:id/delete", async (req, res) => {
     let id = req.params["id"];
     await Listing.deleteOne({ _id: id });
-    res.redirect("/listings");
+    res.render("lDelSuc.ejs");
 });
 
 // app.get("/testlisting", async (req, res) => {
